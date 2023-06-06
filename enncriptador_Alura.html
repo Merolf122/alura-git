@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Encriptador Alura</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style-encrypt.css">
+    <script>
+        function encriptar() {
+        var textoOriginal = document.getElementById("textoOriginal").value;
+        var textoEncriptado = textoOriginal.replace(/e/g, "enter").replace(/i/g, "imes").replace(/a/g, "ai");
+        document.getElementById("textoEncriptado").value = textoEncriptado;
+        }
+    
+        function desencriptar() {
+        var textoEncriptado = document.getElementById("textoEncriptado").value;
+        var textoDesencriptado = textoEncriptado.replace(/enter/g, "e").replace(/imes/g, "i").replace(/ai/g, "a");
+        document.getElementById("textoEncriptado").value = textoDesencriptado;
+        }
+
+        function copiarTextoEncriptado() {
+            var textoEncriptado = document.getElementById("textoEncriptado");
+            textoEncriptado.select();
+            document.execCommand("copy");
+
+        }
+
+    </script>   
+    
+</head>
+
+
+
+<body>
+    <header>
+        <img class="header" src="Logo.png" alt="logo">
+    </header>
+
+<main>
+
+
+
+<textarea class="texto" name="" id="textoOriginal" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+
+
+
+<p class="vector">&#9888 Solo letras minúsculas y sin acentos</p>
+
+
+
+
+
+<button class="boton1" onclick="encriptar()">Encriptar</button>
+
+<button class="boton2" onclick="desencriptar()">Desencriptar</button>
+
+<br>
+<div class="rectangle">
+    <textarea name="" id="textoEncriptado" cols="30" rows="10" placeholder="Ningún mensaje fue encontrado" readonly></textarea>
+
+    <button class="boton3" onclick="copiarTextoEncriptado()">Copiar</button>
+
+</div>
+</main>
+
+<footer>
+    <img src="diamod.png">
+    <p class="copyright">&copy Copyright  Alura 2023</p>
+</footer>
+
+</body>
+
+
+</html>
